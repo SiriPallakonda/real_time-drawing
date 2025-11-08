@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+Collaborative Canvas
 
-# Run and deploy your AI Studio app
+A real-time collaborative drawing application that allows multiple users to draw simultaneously on a shared canvas with live synchronization, undo/redo functionality, and conflict resolution.
 
-This contains everything you need to run your app locally.
+Project Overview
 
-View your app in AI Studio: https://ai.studio/apps/drive/13vLgpJubFhvA-rMqs0hwUQcUki9BtFnx
+Developed by Siri Pallakonda, this project demonstrates efficient real-time communication using WebSockets, smooth Canvas API operations, and consistent global state management across multiple clients. It focuses on performance, low latency, and seamless synchronization of drawing data between users.
 
-## Run Locally
+Features
 
-**Prerequisites:**  Node.js
+Real-time collaborative drawing across multiple users
 
+Brush and eraser tools with adjustable color and stroke width
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Global undo and redo operations
+
+User presence indicators with unique colors
+
+Conflict-free state synchronization across clients
+
+Robust error handling and smooth recovery from disconnections
+
+Tech Stack
+
+Frontend: Vanilla JavaScript (Canvas API), HTML, CSS
+Backend: Node.js, Express, WebSocket (Socket.io)
+Version Control: Git and GitHub
+Deployment: Vercel / Render / Railway (configurable)
+
+Architecture Overview
+
+The client captures drawing actions and transmits them as serialized stroke events to the server over WebSockets. The server maintains an ordered operation history and broadcasts updates to all connected clients. Undo/redo operations are handled globally by maintaining a synchronized operation stack across all users.
+
+For detailed architecture, refer to the ARCHITECTURE.md file which includes:
+
+Data flow diagrams
+
+WebSocket message structure
+
+Undo/Redo operation strategy
+
+Conflict resolution and latency handling
