@@ -1,0 +1,5 @@
+{
+  "name": "Real-Time Collaborative Canvas",
+  "description": "A multi-user drawing application where users can draw simultaneously on the same canvas with real-time synchronization, featuring drawing tools, user indicators, and global undo/redo functionality.",
+  "requestFramePermissions": []
+}
